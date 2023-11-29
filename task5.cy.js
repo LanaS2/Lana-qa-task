@@ -1,7 +1,7 @@
 /// <reference types="cypress"/ >
 
 describe('Creating an Account Page', () => {
-    it('should display all fields and buttons', () => {
+    it('display all fields and buttons', () => {
          cy.visit("https://magento.softwaretestingboard.com/customer/account/create/")
         cy.get('#firstname').should('be.visible')
         cy.get('#lastname').should('be.visible')
@@ -10,7 +10,7 @@ describe('Creating an Account Page', () => {
         cy.get('#password-confirmation').should('be.visible')
         cy.get('button[title="Create an Account"]').should('be.visible')
     });
-    it.only('should create an account successfully', () => {
+    it.only( 'create an account', () => {
         cy.visit("https://magento.softwaretestingboard.com/customer/account/create/");
         cy.get('#firstname').type('Lana',{delay:200});
         cy.get('#lastname').type('Salameh',{delay:200});
