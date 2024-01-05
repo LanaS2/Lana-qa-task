@@ -5,4 +5,4 @@ class addToCartAssertions {
       }
   }
   
-  export default loginPageAssertions;
+  export default addToCartAssertionsAssertions;
