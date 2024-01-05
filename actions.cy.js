@@ -1,31 +1,30 @@
-class addToCartActions {
-    visitHomePage() {
-      cy.visit("https://magento.softwaretestingboard.com/");
-      return this;
+class CreateAccountPageActions {
+    visit() {
+      cy.visit("https://magento.softwaretestingboard.com/customer/account/create/");
     }
   
-    searchForProduct(productName) {
-      cy.get("#search").type(`${productName} {enter}`);
-      return this;
+    typeFirstName(firstName) {
+      cy.get("#firstname").clear().type(firstName);
     }
   
-    chooseProductX() {
-      cy.get(".product-items li").first().click();
-      return this;
+    typeLastName(lastName) {
+      cy.get("#lastname").clear().type(lastName);
     }
   
-    chooseSizeAndColor(size, colorIndex) {
-      cy.wait(1500);
-      cy.get(".swatch-attribute.size").contains(size).click();
-      cy.get(".swatch-attribute.color").find(".swatch-option").eq(colorIndex).click();
-      return this;
+    typeEmail(email) {
+      cy.get("#email_address").clear().type(email);
     }
   
-    clickAddToCart() {
-      cy.get("#product-addtocart-button").click();
-      return this;
+    typePassword(password) {
+      cy.get("#password").clear().type(password);
     }
-  }
   
-  export default new addToCartActions();
+    typeConfirmPassword(confirmPassword) {
+      cy.get("#password-confirmation").clear().type(confirmPassword);
+    }
   
+    clickCreateAccountButton() {
+      cy.get(".submit.primary").click();
+    }
+}
+export default new CreateAccountPageActions();
